@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 
 const mongoose = require('mongoose');
+const Product = require('./models/product');
 
 mongoose.connection.on('connected', () => console.log('connected'));
 mongoose.connection.on('open', () => console.log('open'));
