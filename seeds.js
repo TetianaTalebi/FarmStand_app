@@ -10,12 +10,12 @@ mongoose.connection.on('close', () => console.log('close'));
 
 mongoose.connect('mongodb://127.0.0.1:27017/FarmStandApp');
 
-const p = new Product ({
-    name: 'Ruby Grapefruit', 
-    price: 1.99,
-    category: 'fruit'
-});
+// const p = new Product ({
+//     name: 'Ruby Grapefruit', 
+//     price: 1.99,
+//     category: 'fruit'
+// });
 
-p.save()
-.then(p=>{console.log(p)})
-.catch(e=>{console.log(e)});
+// p.save()
+// .then(p=>{console.log(p)})
+// .catch(e=>{console.log(e)});
