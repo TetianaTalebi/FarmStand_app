@@ -17,8 +17,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/FarmStandApp');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(()=>{
-    console.log("We have got a new request!!!")
+// app.use(()=>{
+//     console.log("We have got a new request!!!")
+// })
+
+app.get('/products', async (req, res) => {
+    const products = await Product.find({});
+    console.log(products);
+    res.send('All products will be here!!!')
 })
 
 app.listen(3000, (req, res) =>{
