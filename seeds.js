@@ -53,6 +53,10 @@ const seedProducts = [
     }
 ];
 
+Product.insertMany(seedProducts)
+.then(() => {console.log("OK!!!")})
+.catch((e) => {console.log(e)});
+
 // const p = new Product ({
 //     name: 'Ruby Grapefruit', 
 //     price: 1.99,
