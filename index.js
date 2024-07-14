@@ -31,8 +31,9 @@ app.get('/products', async (req, res) => {
 app.get('/products/:id', async (req, res) =>{
     const {id} = req.params;
     const product = await Product.findById(id);
-    console.log(product);
-    res.send('Details Page')
+    res.render('products/show', {product})
+    // console.log(product);
+    // res.send('Details Page')
 })
 
 app.listen(3000, (req, res) =>{
