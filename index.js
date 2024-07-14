@@ -28,6 +28,10 @@ app.get('/products', async (req, res) => {
     // res.send('All products will be here!!!')
 })
 
+app.get('/products/new', (req, res) => {
+    res.render('products/new')
+})
+
 app.get('/products/:id', async (req, res) =>{
     const {id} = req.params;
     const product = await Product.findById(id);
@@ -35,6 +39,8 @@ app.get('/products/:id', async (req, res) =>{
     // console.log(product);
     // res.send('Details Page')
 })
+
+
 
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
