@@ -42,9 +42,12 @@ app.get('/products/:id', async (req, res) =>{
     // res.send('Details Page')
 })
 
-app.post('/products', (req, res)=>{
-    console.log(req.body);
-    res.send('Making your product!')
+app.post('/products', async (req, res)=>{
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.redirect(`/products/${newProduct._id}`)
+    // console.log(newProduct);
+    // res.send('Making your product!')
 })
 
 
