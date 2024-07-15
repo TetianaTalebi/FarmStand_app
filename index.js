@@ -40,6 +40,11 @@ app.get('/products/:id', async (req, res) =>{
     // res.send('Details Page')
 })
 
+app.post('/products', (req, res)=>{
+    console.log(req.body);
+    res.send('Making your product!')
+})
+
 
 
 app.listen(3000, (req, res) =>{
