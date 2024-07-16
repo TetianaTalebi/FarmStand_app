@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const Product = require('./models/product');
 
 mongoose.connection.on('connected', () => console.log('connected'));
@@ -18,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 // app.use(()=>{
 //     console.log("We have got a new request!!!")
