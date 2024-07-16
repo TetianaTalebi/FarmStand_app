@@ -7,6 +7,27 @@
 </head>
 <body>
     <h1>Edit Product</h1>
+
+    <form action="/products" method="POST">
+
+        <label for="name">Product Name: </label>
+        <input type="text" id="name" name="name" placeholder="product name...">
+        <br>
+
+        <label for="price">Price, USD: </label>
+        <input type="number" min="0" id="price" name="price" step="any">
+        <br>
+
+        <label for="category">Category: </label>
+        <select name="category" id="category">
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option>
+        </select>
+        <br>
+
+        <button>Submit</button>
+    </form>
     
 </body>
 </html>
