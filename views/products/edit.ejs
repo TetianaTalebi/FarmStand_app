@@ -11,11 +11,12 @@
     <form action="/products" method="POST">
 
         <label for="name">Product Name: </label>
-        <input type="text" id="name" name="name" placeholder="product name...">
+        <input type="text" id="name" name="name" placeholder="product name..." value="<%= product.name %>">
         <br>
 
         <label for="price">Price, USD: </label>
-        <input type="number" min="0" id="price" name="price" step="any">
+        <input type="number" min="0" id="price" name="price" step="any"
+        value="<%= product.price %>">
         <br>
 
         <label for="category">Category: </label>
