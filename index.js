@@ -5,6 +5,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Product = require('./models/product');
+const categories = ['fruit', 'vegetable', 'dairy'];
 
 mongoose.connection.on('connected', () => console.log('connected'));
 mongoose.connection.on('open', () => console.log('open'));
