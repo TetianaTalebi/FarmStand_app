@@ -34,7 +34,7 @@ app.get('/products', async (req, res) => {
 })
 
 app.get('/products/new', (req, res) => {
-    res.render('products/new')
+    res.render('products/new', {categories})
 })
 
 app.get('/products/:id/edit', async (req, res) => {
