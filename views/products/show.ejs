@@ -12,7 +12,8 @@
         <li>Price: <%= product.price %> USD</li>
         <li>Category: <%= product.category %></li>
     </ul>
-
+    <a href="/products/<%= product._id %>/edit">Edit <%= product.name %></a>
+    <br>
     <a href="/products">All products</a>
 </body>
 </html>
