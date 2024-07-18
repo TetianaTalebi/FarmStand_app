@@ -67,8 +67,11 @@ app.post('/products', async (req, res)=>{
     // res.send('Making your product!')
 })
 
-app.delete('/products/:id', (req, res) => {
-    res.send('You made it!')
+app.delete('/products/:id', async (req, res) => {
+    const {id} = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    res.redirect('/products')
+    // res.send('You made it!')
 })
 
 app.listen(3000, (req, res) =>{
