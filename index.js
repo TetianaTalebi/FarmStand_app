@@ -67,7 +67,9 @@ app.post('/products', async (req, res)=>{
     // res.send('Making your product!')
 })
 
-
+app.delete('/products/:id', (req, res) => {
+    res.send('You made it!')
+})
 
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
