@@ -27,8 +27,10 @@ app.use(methodOverride('_method'));
 // })
 
 app.get('/products', async (req, res) => {
+    const {category} = req.query;
     const products = await Product.find({});
     res.render('products/index', {products})
+
     // console.log(products);
     // res.send('All products will be here!!!')
 })
