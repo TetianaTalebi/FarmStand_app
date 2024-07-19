@@ -10,7 +10,12 @@
 
     <ul>
         <li>Price: <%= product.price %> USD</li>
-        <li>Category: <%= product.category %></li>
+
+        <li>Category: 
+            <!-- This is a link that allows us to see all the items related to the certain category -->
+            <a href="/products?category=<%= product.category %>"><%= product.category %></a>
+        </li>
+
     </ul>
     <a href="/products/<%= product._id %>/edit">Edit <%= product.name %></a>
     <br>
