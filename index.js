@@ -28,11 +28,17 @@ app.use(methodOverride('_method'));
 
 app.get('/products', async (req, res) => {
     const {category} = req.query;
-    const products = await Product.find({});
-    res.render('products/index', {products})
 
-    // console.log(products);
-    // res.send('All products will be here!!!')
+    // If we have a category in req.query
+    if (category) {
+        const products = await Product.find({category});
+        res.render('products/index', {products, category})
+
+    } else {
+        // If we don't have a category in req.query
+        const products = await Product.find({});
+        res.render('products/index', {products, category: 'All'})
+    }
 })
 
 app.get('/products/new', (req, res) => {
