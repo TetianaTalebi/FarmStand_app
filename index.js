@@ -92,6 +92,11 @@ app.get('/farms/new', (req, res) => {
     res.render('farms/new');
 })
 
+// This route posts data from the form
+app.post('/farms', async (req, res) => {
+    res.send(req.body);
+})
+
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
 })
