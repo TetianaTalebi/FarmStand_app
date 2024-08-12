@@ -16,5 +16,11 @@ const farmSchema = new Schema({
     email: {
         type: String,
         required: [true, 'E-mail is required!!!']
+    },
+    // In this app two-sided Mongo DB relationship is used
+    // product has a reference to a farm and a farm has a reference to a product
+    products: {
+        type: Schema.Types.ObjectId,
+        ref: 'Product' // This is a reference to the 'Product' Mongoose Model
     }
 });
