@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+// Destructuring Schema from mongoose.Schema (i.e. creating a short cut for mongoose.Schema)
+const {Schema} = mongoose; // This code is equal to: const Schema = mongoose.Schema
+
+const productSchema = new Schema({
     name: {     
             type: String,
             required: true
