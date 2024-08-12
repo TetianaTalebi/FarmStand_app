@@ -28,3 +28,4 @@ const farmSchema = new Schema({
 // Defining 'Farm' model
 const Farm = mongoose.model('Farm', farmSchema);
 
+module.exports = Farm;
