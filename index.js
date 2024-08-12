@@ -87,6 +87,13 @@ app.delete('/products/:id', async (req, res) => {
 
 // Farm routes:
 
+// This route is rendering a list of farms that are saved in the data base
+app.get('/farms', async (req, res) => {
+    const farms = await Farm.find({});
+    // res.render('farms/index', {farms});
+    res.send(farms);
+})
+
 // This route is only rendering a form where a user can create a new farm
 app.get('/farms/new', (req, res) => {
     res.render('farms/new');
