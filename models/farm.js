@@ -24,3 +24,7 @@ const farmSchema = new Schema({
         ref: 'Product' // This is a reference to the 'Product' Mongoose Model
     }
 });
+
+// Defining 'Farm' model
+const Farm = mongoose.model('Farm', farmSchema);
+
