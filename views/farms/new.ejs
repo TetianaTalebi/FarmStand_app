@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product</title>
+    <title>Add Farm</title>
 </head>
 <body>
-    <h1>Add A Product</h1>
+    <h1>Add A Farm</h1>
 
-    <form action="/products" method="POST">
+    <form action="/farms" method="POST">
 
-        <label for="name">Product Name: </label>
-        <input type="text" id="name" name="name" placeholder="product name...">
-        <br>
+        <div>
+            <label for="name">Farm Name: </label>
+            <input type="text" id="name" name="name" placeholder="farm name...">
+        </div>
 
-        <label for="price">Price, USD: </label>
-        <input type="number" min="0" id="price" name="price" step="any">
-        <br>
-
-        <label for="category">Category: </label>
-        <select name="category" id="category">
-
-            <% for (let category of categories) { %>
-                <option value="<%= category %>"><%= category %></option>
-            <% } %>
-
-            <!-- <option value="fruit">fruit</option>
-            <option value="vegetable">vegetable</option>
-            <option value="dairy">dairy</option> -->
-            
-        </select>
-        <br>
-
+        <div>
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city" placeholder="farm city...">
+        </div>
+        
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="farm e-mail...">
+        </div>
+        
         <button>Submit</button>
     </form>
 
