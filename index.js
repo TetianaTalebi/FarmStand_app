@@ -87,6 +87,11 @@ app.delete('/products/:id', async (req, res) => {
 
 // Farm routes:
 
+// This route is only rendering a form where a user can create a new farm
+app.get('/farms/new', (req, res) => {
+    res.render('farms/new');
+})
+
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
 })
