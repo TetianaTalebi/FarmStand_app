@@ -27,6 +27,8 @@ app.use(methodOverride('_method'));
 //     console.log("We have got a new request!!!")
 // })
 
+// Product routes:
+
 app.get('/products', async (req, res) => {
     const {category} = req.query;
 
@@ -82,6 +84,8 @@ app.delete('/products/:id', async (req, res) => {
     res.redirect('/products')
     // res.send('You made it!')
 })
+
+// Farm routes:
 
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
