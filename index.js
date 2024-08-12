@@ -94,7 +94,10 @@ app.get('/farms/new', (req, res) => {
 
 // This route posts data from the form
 app.post('/farms', async (req, res) => {
-    res.send(req.body);
+    // res.send(req.body);
+    const farm = new Farm(req.body);
+    await farm.save();
+    res.redirect('/farms');
 })
 
 app.listen(3000, (req, res) =>{
