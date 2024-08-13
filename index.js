@@ -114,6 +114,13 @@ app.post('/farms', async (req, res) => {
     res.redirect('/farms');
 })
 
+// Defining a nested route. This route renders a form.
+// This route helps to add a new product into the database that is associated with a particular farm
+
+app.get('/farms/:id/products/new', (req, res) => {
+    res.render('products/new', {categories});
+})
+
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
 })
