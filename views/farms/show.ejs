@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= product.name %></title>
+    <title><%= farm.name %></title>
 </head>
 <body>
-    <h1><%= product.name %></h1>
+    <h1><%= farm.name %></h1>
 
     <ul>
-        <li>Price: <%= product.price %> USD</li>
+        <li>City: <%= farm.city %></li>
 
-        <li>Category: 
-            <!-- This is a link that allows us to see all the items related to the certain category -->
-            <a href="/products?category=<%= product.category %>"><%= product.category %></a>
-        </li>
-
+        <li>E-mail: <%= farm.email %></li>
     </ul>
-    <a href="/products/<%= product._id %>/edit">Edit <%= product.name %></a>
-    <br>
-    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-    <a href="/products">All products</a>
+    <a href="/farms">All Farms</a>
+     
 </body>
 </html>
