@@ -19,10 +19,10 @@ const farmSchema = new Schema({
     },
     // In this app two-sided Mongo DB relationship is used
     // product has a reference to a farm and a farm has a reference to a product
-    products: {
+    products: [{
         type: Schema.Types.ObjectId,
         ref: 'Product' // This is a reference to the 'Product' Mongoose Model
-    }
+    }]
 });
 
 // Defining 'Farm' model
