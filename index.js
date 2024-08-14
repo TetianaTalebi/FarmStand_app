@@ -118,7 +118,8 @@ app.post('/farms', async (req, res) => {
 // This route helps to add a new product into the database that is associated with a particular farm
 
 app.get('/farms/:id/products/new', (req, res) => {
-    res.render('products/new', {categories});
+    const {id} = req.params;
+    res.render('products/new', {categories, id});
 })
 
 app.listen(3000, (req, res) =>{
