@@ -122,6 +122,11 @@ app.get('/farms/:id/products/new', (req, res) => {
     res.render('products/new', {categories, id});
 })
 
+app.post('/farms/:id/products', async (req, res) => {
+    res.send(req.body);
+
+})
+
 app.listen(3000, (req, res) =>{
     console.log("App is listening on port 3000!!!")
 })
