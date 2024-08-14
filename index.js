@@ -117,9 +117,10 @@ app.post('/farms', async (req, res) => {
 // Defining a nested route. This route renders a form.
 // This route helps to add a new product into the database that is associated with a particular farm
 
-app.get('/farms/:id/products/new', (req, res) => {
+app.get('/farms/:id/products/new', async (req, res) => {
     const {id} = req.params;
-    res.render('products/new', {categories, id});
+    const farm = await Farm.findById(id);
+    res.render('products/new', {categories, id, farm});
 })
 
 app.post('/farms/:id/products', async (req, res) => {
@@ -134,7 +135,7 @@ app.post('/farms/:id/products', async (req, res) => {
 
     await farm.save();
     await product.save();
-    
+
     res.redirect(`/farms/${farm._id}`);
 })
 
