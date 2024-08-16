@@ -120,7 +120,7 @@ app.post('/farms', async (req, res) => {
 app.get('/farms/:id/products/new', async (req, res) => {
     const {id} = req.params;
     const farm = await Farm.findById(id);
-    res.render('products/new', {categories, id, farm});
+    res.render('products/new', {categories, farm});
 })
 
 app.post('/farms/:id/products', async (req, res) => {
