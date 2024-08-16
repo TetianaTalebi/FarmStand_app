@@ -101,7 +101,7 @@ app.get('/farms/new', (req, res) => {
 
 // This route renders a show page for the chosen farm
 app.get('/farms/:id', async (req, res) => {
-    const farm = await Farm.findById(req.params.id);
+    const farm = await Farm.findById(req.params.id).populate('products');
     res.render('farms/show', {farm});
     // console.log(farm);
 })
