@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Product = require('./product');
 
 // Destructuring Schema from mongoose object
 // Creating a shortcut for mongoose.Schema
