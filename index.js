@@ -105,6 +105,13 @@ app.get('/farms/:id', async (req, res) => {
     // console.log(farm);
 })
 
+app.delete('/farms/:id', async (req, res) => {
+    const farm = await Farm.findByIdAndDelete(req.params.id);
+    console.log("Deleting the following farm:");
+    console.log(farm);
+    res.redirect('/farms');
+})
+
 // This route posts data from the form
 app.post('/farms', async (req, res) => {
     // res.send(req.body);
