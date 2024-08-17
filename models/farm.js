@@ -26,6 +26,15 @@ const farmSchema = new Schema({
     }]
 });
 
+farmSchema.post('findOneAndDelete', async function(farm){
+    // console.log("Post Mongoose Middleware!!!");
+    // console.log(farm);
+    if (farm.products.length) {
+        const res = await Product.deleteMany({_id: {$in: farm.products}});
+        console.log(res);
+    }
+});
+
 // Defining 'Farm' model
 const Farm = mongoose.model('Farm', farmSchema);
 
