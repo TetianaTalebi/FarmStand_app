@@ -2,6 +2,7 @@ const express= require('express');
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const flash = require('connect-flash');
 const sessionOptions = {
     secret: 'notagoodsecret', 
     resave: false,
@@ -29,6 +30,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session(sessionOptions));
+app.use(flash());
 
 // app.use(()=>{
 //     console.log("We have got a new request!!!")
