@@ -32,6 +32,13 @@ app.use(methodOverride('_method'));
 app.use(session(sessionOptions));
 app.use(flash());
 
+// This middleware adds 'messages' onto the res object 
+// So, it will be an access to flash messages on every single template
+app.use((req, res, next) => {
+    res.locals.messages = req.flash('success');
+    next();
+});
+
 // app.use(()=>{
 //     console.log("We have got a new request!!!")
 // })
@@ -98,7 +105,7 @@ app.delete('/products/:id', async (req, res) => {
 // This route is rendering a list of farms that are saved in the data base
 app.get('/farms', async (req, res) => {
     const farms = await Farm.find({});
-    res.render('farms/index', {farms, messages: req.flash('success')});
+    res.render('farms/index', {farms});
     // res.send(farms);
 })
 
