@@ -124,6 +124,7 @@ app.post('/farms', async (req, res) => {
     // res.send(req.body);
     const farm = new Farm(req.body);
     await farm.save();
+    req.flash('success', 'Successfully made a new farm !!!');
     res.redirect('/farms');
 })
 
